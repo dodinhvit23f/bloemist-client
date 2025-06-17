@@ -18,6 +18,7 @@ const nextConfig = {
   // Ensure compatibility with React 18
   reactStrictMode: true,
   swcMinify: true,
+  output: 'standalone',
 }
 
 export default nextConfig

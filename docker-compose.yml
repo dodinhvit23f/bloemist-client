@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  bloemist-fe:
+    container_name: bloemist_fe
+    build:
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "8889:3000"
