@@ -18,22 +18,25 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: "Bloemist | Elegant Floral Arrangements",
+  title: "Bloom & Petal | Elegant Floral Arrangements",
   description: "Beautiful floral arrangements for all occasions",
+  keywords: ["flowers", "bouquets", "floral arrangements", "wedding flowers"],
+  authors: [{ name: "Bloom & Petal" }],
+  viewport: "width=device-width, initial-scale=1",
 }
 
 export default function RootLayout({
-  children,
-}: Readonly<{
+                                     children,
+                                   }: Readonly<{
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={`${playfair.variable} ${montserrat.variable} font-sans`}>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+      <html lang="en" className={`${playfair.variable} ${montserrat.variable}`}>
+      <body className="font-montserrat antialiased">
+      <Header />
+      <main>{children}</main>
+      <Footer />
       </body>
-    </html>
+      </html>
   )
 }

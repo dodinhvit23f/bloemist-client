@@ -15,6 +15,9 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     unoptimized: true,
   },
+  // Ensure compatibility with React 18
+  reactStrictMode: true,
+  swcMinify: true,
 }
 
 export default nextConfig
