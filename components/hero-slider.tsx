@@ -7,19 +7,19 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 const slides = [
   {
     id: 1,
-    image: "/placeholder.svg?height=800&width=1600",
+    image: "https://lh3.googleusercontent.com/d/1PqdaKJSFnH94dide1O-J8k6fwWNxEAQ8".concat("?sz=s1980"),
     title: "Elegant Floral Arrangements",
     subtitle: "Handcrafted with love and care",
   },
   {
     id: 2,
-    image: "/placeholder.svg?height=800&width=1600",
+    image: "https://lh3.googleusercontent.com/d/14fWgK2OlsUKATDJvQMo_4Zo4R-FyJFFm".concat("?sz=s1980"),
     title: "Seasonal Collections",
     subtitle: "Fresh blooms for every season",
   },
   {
     id: 3,
-    image: "/placeholder.svg?height=800&width=1600",
+    image: "https://lh3.googleusercontent.com/d/14fWgK2OlsUKATDJvQMo_4Zo4R-FyJFFm".concat("?sz=s1980"),
     title: "Bespoke Bouquets",
     subtitle: "Tailored to your special moments",
   },
@@ -54,10 +54,11 @@ export default function HeroSlider() {
             >
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent z-10" />
               <Image
+                  loading="lazy"
                   src={slide.image || "/placeholder.svg"}
                   alt={slide.title}
                   fill
-                  priority={index === 0}
+                  //priority={index === 0}
                   className="object-cover"
               />
               <div className="absolute inset-0 flex flex-col items-center justify-center z-20 text-center px-4 animate-fade-in">
@@ -77,14 +78,14 @@ export default function HeroSlider() {
             className="absolute left-4 top-1/2 -translate-y-1/2 z-30 glass-effect hover:bg-white/30 rounded-full p-3 transition-all duration-200 hover:scale-110"
             aria-label="Previous slide"
         >
-          <ChevronLeft className="w-6 h-6 text-white" />
+          <ChevronLeft className="w-6 h-6" />
         </button>
         <button
             onClick={nextSlide}
             className="absolute right-4 top-1/2 -translate-y-1/2 z-30 glass-effect hover:bg-white/30 rounded-full p-3 transition-all duration-200 hover:scale-110"
             aria-label="Next slide"
         >
-          <ChevronRight className="w-6 h-6 text-white" />
+          <ChevronRight className="w-6 h-6" />
         </button>
 
         {/* Dots */}
