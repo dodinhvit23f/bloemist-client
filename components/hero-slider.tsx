@@ -75,17 +75,17 @@ export default function HeroSlider() {
         {/* Navigation Arrows */}
         <button
             onClick={prevSlide}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-30 glass-effect hover:bg-white/30 rounded-full p-3 transition-all duration-200 hover:scale-110"
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-30 p-3 transition-all duration-200 hover:scale-110"
             aria-label="Previous slide"
         >
-          <ChevronLeft className="w-6 h-6" />
+          <ChevronLeft className="w-8 h-8 text-white drop-shadow-lg hover:text-white/80 transition-colors duration-200" />
         </button>
         <button
             onClick={nextSlide}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-30 glass-effect hover:bg-white/30 rounded-full p-3 transition-all duration-200 hover:scale-110"
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-30 p-3 transition-all duration-200 hover:scale-110"
             aria-label="Next slide"
         >
-          <ChevronRight className="w-6 h-6" />
+          <ChevronRight className="w-8 h-8 text-white drop-shadow-lg hover:text-white/80 transition-colors duration-200" />
         </button>
 
         {/* Dots */}
