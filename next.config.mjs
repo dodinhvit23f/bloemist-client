@@ -16,7 +16,7 @@ const nextConfig = {
     unoptimized: true,
   },
   // Ensure compatibility with React 18
-  reactStrictMode: true,
+  reactStrictMode: false,
   swcMinify: true,
   output: 'standalone',
 }
