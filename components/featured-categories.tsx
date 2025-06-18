@@ -7,19 +7,19 @@ const categories = [
     id: 1,
     name: bouquets,
     image: "/placeholder.svg?height=400&width=400",
-    link: "#bouquets",
+    link: "/categories/bouquets",
   },
   {
     id: 2,
     name: vaseArrangements,
     image: "/placeholder.svg?height=400&width=400",
-    link: "#vase-arrangements",
+    link: "/categories/vase-arrangements",
   },
   {
     id: 3,
     name: bestSeller,
     image: "/placeholder.svg?height=400&width=400",
-    link: "#best-sellers",
+    link: "/categories/best-sellers",
   },
 ]
 

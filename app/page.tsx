@@ -1,7 +1,7 @@
 import HeroSlider from "@/components/hero-slider"
 import FeaturedCategories from "@/components/featured-categories"
 import ProductSection from "@/components/product-section"
-import { bouquetsData, vaseArrangementsData, bestSellers } from "@/lib/data"
+import { bouquetsData, vaseArrangementsData, bestSellersData } from "@/lib/data"
 import {bestSeller, bouquets, vaseArrangements} from "@/components/header";
 
 export default function Home() {
@@ -19,7 +19,7 @@ export default function Home() {
           products={vaseArrangementsData}
         />
 
-        <ProductSection title={bestSeller} description="Đẹp, tinh tế, và luôn cháy hàng" products={bestSellers} />
+        <ProductSection title={bestSeller} description="Đẹp, tinh tế, và luôn cháy hàng" products={bestSellersData} />
       </div>
     </div>
   )

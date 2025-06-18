@@ -4,4 +4,7 @@ export interface Product {
   code: string
   price: number
   image: string
+  category: "bouquet" | "vase" | "seasonal"
+  isBestSeller?: boolean
+  description?: string
 }

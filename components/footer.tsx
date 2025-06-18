@@ -37,7 +37,7 @@ export default function Footer() {
 
             {/* Quick Links */}
             <div className="space-y-6">
-              <h3 className="font-playfair text-xl font-semibold text-neutral-800">Quick Links</h3>
+              <h3 className="font-playfair text-xl font-semibold text-neutral-800">Đường dẫn</h3>
               <ul className="space-y-3 font-montserrat">
                 <li>
                   <Link
@@ -49,7 +49,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                      href="#bouquets"
+                      href="/categories/bouquets"
                       className="text-neutral-600 hover:text-primary-600 transition-colors duration-200 hover:translate-x-1 inline-block"
                   >
                     {bouquets}
@@ -57,7 +57,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                      href="#vase-arrangements"
+                      href="/categories/vase-arrangements"
                       className="text-neutral-600 hover:text-primary-600 transition-colors duration-200 hover:translate-x-1 inline-block"
                   >
                     {vaseArrangements}
@@ -65,7 +65,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                      href="#best-sellers"
+                      href="/categories/best-sellers"
                       className="text-neutral-600 hover:text-primary-600 transition-colors duration-200 hover:translate-x-1 inline-block"
                   >
                     {bestSeller}
@@ -92,16 +92,16 @@ export default function Footer() {
 
             {/* Opening Hours & Social */}
             <div className="space-y-6">
-              <h3 className="font-playfair text-xl font-semibold text-neutral-800">Opening Hours</h3>
+              <h3 className="font-playfair text-xl font-semibold text-neutral-800">Giờ mở cửa</h3>
               <ul className="space-y-3 font-montserrat">
                 <li className="flex justify-between items-center">
                   <span className="text-neutral-600">Monday - Sunday</span>
-                  <span className="text-neutral-800 font-medium">9:00 AM - 7:00 PM</span>
+                  <span className="text-neutral-800 font-medium">8:00 AM - 7:00 PM</span>
                 </li>
               </ul>
 
               <div className="pt-4">
-                <h3 className="font-playfair text-xl font-semibold mb-4 text-neutral-800">Follow Us</h3>
+                <h3 className="font-playfair text-xl font-semibold mb-4 text-neutral-800">Mạng xã hội</h3>
                 <div className="flex space-x-4">
                   <Link
                       href="https://www.instagram.com/tiemhoabloemist"

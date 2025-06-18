@@ -1,5 +1,5 @@
 import type React from "react"
-import type { Metadata } from "next"
+import type {Metadata, Viewport} from "next"
 import { Playfair_Display, Montserrat } from "next/font/google"
 import "./globals.css"
 import Header from "@/components/header"
@@ -18,11 +18,20 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: "Bloom & Petal | Elegant Floral Arrangements",
-  description: "Beautiful floral arrangements for all occasions",
-  keywords: ["flowers", "bouquets", "floral arrangements", "wedding flowers"],
-  authors: [{ name: "Bloom & Petal" }],
-  viewport: "width=device-width, initial-scale=1",
+    title: `Bloemist | Elegant Floral Arrangements`,
+    description: "Beautiful floral arrangements for all occasions",
+    keywords: ["flowers",
+        "bouquets",
+        "floral arrangements",
+        "wedding flowers",
+        "acrylic flower container",
+        "event flowers"],
+    authors: [{ name: "Bloemist" }],
+}
+
+export const viewport: Viewport = {
+    width: "device-width",
+    initialScale: 1,
 }
 
 export default function RootLayout({

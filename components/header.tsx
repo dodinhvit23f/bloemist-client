@@ -49,19 +49,19 @@ export default function Header() {
                 {home}
               </Link>
               <Link
-                  href="#bouquets"
+                  href="/categories/bouquets"
                   className="font-montserrat text-neutral-800 hover:text-primary-500 transition-colors duration-200"
               >
                 {bouquets}
               </Link>
               <Link
-                  href="#vase-arrangements"
+                  href="/categories/vase-arrangements"
                   className="font-montserrat text-neutral-800 hover:text-primary-500 transition-colors duration-200"
               >
                 {vaseArrangements}
               </Link>
               <Link
-                  href="#best-sellers"
+                  href="/categories/best-sellers"
                   className="font-montserrat text-neutral-800 hover:text-primary-500 transition-colors duration-200"
               >
                 {bestSeller}
@@ -108,21 +108,21 @@ export default function Header() {
                     {home}
                   </Link>
                   <Link
-                      href="#bouquets"
+                      href="/categories/bouquets"
                       className="font-montserrat text-neutral-800 hover:text-primary-500 transition-colors duration-200 py-2"
                       onClick={() => setIsMenuOpen(false)}
                   >
                     {bouquets}
                   </Link>
                   <Link
-                      href="#vase-arrangements"
+                      href="/categories/vase-arrangements"
                       className="font-montserrat text-neutral-800 hover:text-primary-500 transition-colors duration-200 py-2"
                       onClick={() => setIsMenuOpen(false)}
                   >
                     {vaseArrangements}
                   </Link>
                   <Link
-                      href="#best-sellers"
+                      href="/categories/best-sellers"
                       className="font-montserrat text-neutral-800 hover:text-primary-500 transition-colors duration-200 py-2"
                       onClick={() => setIsMenuOpen(false)}
                   >
