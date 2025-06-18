@@ -8,20 +8,20 @@ const slides = [
   {
     id: 1,
     image: "https://lh3.googleusercontent.com/d/1PqdaKJSFnH94dide1O-J8k6fwWNxEAQ8".concat("?sz=s1980"),
-    title: "Elegant Floral Arrangements",
-    subtitle: "Handcrafted with love and care",
+    title: "Trọn Đời Nên Nhau",
+    subtitle: "Tình yêu dẫn lối – Hạnh phúc kết trái",
   },
   {
     id: 2,
-    image: "https://lh3.googleusercontent.com/d/14fWgK2OlsUKATDJvQMo_4Zo4R-FyJFFm".concat("?sz=s1980"),
-    title: "Seasonal Collections",
-    subtitle: "Fresh blooms for every season",
+    image: "https://lh3.googleusercontent.com/d/1bSEXK2xA0jbWGgI3VYSNpPjphhH_YTtc".concat("?sz=s1980"),
+    title: "Tinh Tế Là Một Ngôn Ngữ Không Lời",
+    subtitle: "Bố cục ngăn nắp – Sắc hoa nhẹ nhàng lan tỏa",
   },
   {
     id: 3,
-    image: "https://lh3.googleusercontent.com/d/14fWgK2OlsUKATDJvQMo_4Zo4R-FyJFFm".concat("?sz=s1980"),
-    title: "Bespoke Bouquets",
-    subtitle: "Tailored to your special moments",
+    image: "https://lh3.googleusercontent.com/d/1e_YMaHZr8sxad4G0VNqZAl77ephFHyq6".concat("?sz=s1980"),
+    title: "Mỗi bó hoa là lời yêu chưa nói",
+    subtitle: "Tạo nên từ trái tim, dành riêng cho người bạn yêu thương",
   },
 ]
 

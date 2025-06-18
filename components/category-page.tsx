@@ -2,7 +2,6 @@ import { useState, useEffect } from "react"
 import ProductCard from "./product-card"
 import SearchAndFilter from "./search-and-filter"
 import Pagination from "./pagination"
-import { getAllProducts } from "@/lib/data"
 import type { Product } from "@/lib/types"
 
 interface CategoryPageProps {
@@ -21,7 +20,7 @@ export default function CategoryPage({ category, categoryTitle }: CategoryPagePr
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
-        const allProducts = getAllProducts()
+      /*  const allProducts = getAllProducts()
         const categoryProducts = allProducts.filter((product) => {
             switch (category) {
                 case "bouquets":
@@ -33,9 +32,9 @@ export default function CategoryPage({ category, categoryTitle }: CategoryPagePr
                 default:
                     return false
             }
-        })
+        })*/
 
-        setProducts(categoryProducts)
+       /* setProducts(categoryProducts)*/
         setIsLoading(false)
     }, [category])
 

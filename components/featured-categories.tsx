@@ -7,19 +7,19 @@ const categories = [
   {
     id: 1,
     name: bouquets,
-    image: "/placeholder.svg?height=400&width=400",
+    image: "https://lh3.googleusercontent.com/d/1a5oTQ-H-_yyT1MKH2qZc7QvFBFy82INd".concat("?sz=500"),
     link: "/categories/bouquets",
   },
   {
     id: 2,
     name: vaseArrangements,
-    image: "/placeholder.svg?height=400&width=400",
+    image: "https://lh3.googleusercontent.com/d/1Rg4MVICFGYkEgox5uy89WiRGnieghLP3".concat("?sz=500"),
     link: "/categories/vase-arrangements",
   },
   {
     id: 3,
     name: bestSeller,
-    image: "/placeholder.svg?height=400&width=400",
+    image: "https://lh3.googleusercontent.com/d/1VkRsl098y-nNjbn2wW8tlNQvjVmlDpZu".concat("?sz=500"),
     link: "/categories/best-sellers",
   },
 ]
@@ -40,6 +40,7 @@ export default function FeaturedCategories() {
                   className="group relative overflow-hidden rounded-2xl aspect-square card-hover"
               >
                 <Image
+                    loading="lazy"
                     src={category.image || "/placeholder.svg"}
                     alt={category.name}
                     fill
