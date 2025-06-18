@@ -36,7 +36,7 @@ export default function CategoryPage({ category, categoryTitle }: CategoryPagePr
                 break
         }
 
-        fetchOrdersByCategory(categoryId, 0, 30, "sellingTurn,desc", "")
+        fetchOrdersByCategory(categoryId, currentPage - 1, pageSize, "sellingTurn,desc", "", 0 , 0)
         .then(page => {
             setProducts(mapOrders(page))
         })
@@ -74,9 +74,14 @@ export default function CategoryPage({ category, categoryTitle }: CategoryPagePr
         minPrice: number | undefined
         maxPrice: number | undefined
     }) => {
-        setSearchQuery(filters.search)
+        setSearchQuery(filters.search.trim())
         setMinPrice(filters.minPrice)
         setMaxPrice(filters.maxPrice)
+
+        fetchOrdersByCategory(categoryId, 0, 30, "sellingTurn,desc", filters.search.trim(), filters.minPrice!, filters.maxPrice!)
+        .then(page => {
+            setProducts(mapOrders(page))
+        })
     }
 
     const handlePageChange = (page: number) => {

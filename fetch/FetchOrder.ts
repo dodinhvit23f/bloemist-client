@@ -1,12 +1,20 @@
 import {tenant} from "@/lib/constant";
 import {Page, ResponseApi} from "@/lib/types";
 
-export async function fetchOrdersByCategory(categoryId: number, page: number, size: number, sort: string, search: string) {
+export async function fetchOrdersByCategory(categoryId: number, page: number, size: number,
+                                            sort: string, search: string, minPrice: number, maxPrice: number ) {
     const baseUrl = process.env.NEXT_PUBLIC_PRODUCTS!
     const queryParams = new URLSearchParams();
 
     if(categoryId > 0){
         queryParams.set("categoryId", categoryId.toString())
+    }
+
+    if(minPrice > 0){
+        queryParams.set("minPrice", minPrice.toString())
+    }
+    if(maxPrice > 0){
+        queryParams.set("maxPrice", maxPrice.toString())
     }
 
 
