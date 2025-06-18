@@ -2,7 +2,8 @@
 import {Suspense, use} from "react"
 import {notFound, useParams} from "next/navigation"
 import CategoryPage from "@/components/category-page"
-import {bestSeller, bouquets, vaseArrangements} from "@/components/header";
+
+import {bestSeller, bouquets, vaseArrangements} from "@/lib/constant";
 
 interface PageProps {
     params: {

@@ -1,6 +1,7 @@
 import Link from "next/link"
 import {Instagram, Facebook, Twitter, Mail, Phone, MapPin, AtSign} from "lucide-react"
-import {aboutUs, bestSeller, bouquets, contact, home, shopName, vaseArrangements} from "@/components/header";
+
+import {aboutUs, bestSeller, bouquets, contact, home, shopName, vaseArrangements} from "@/lib/constant";
 
 export default function Footer() {
   return (

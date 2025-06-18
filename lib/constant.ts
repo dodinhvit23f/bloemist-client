@@ -1,0 +1,8 @@
+export const home: string = "Trang chủ"
+export const bouquets: string = "Bó hoa"
+export const vaseArrangements: string = "Hoa thả lọ"
+export const bestSeller: string = " Sản phẩm bán chạy"
+export const shopName = "Bloemist"
+export const aboutUs = "Về chúng tôi"
+export const contact = "Liên hệ"
+export const tenant = "public"

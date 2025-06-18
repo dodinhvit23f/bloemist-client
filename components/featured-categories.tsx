@@ -1,6 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
-import {bestSeller, bouquets, vaseArrangements} from "@/components/header";
+
+import {bestSeller, bouquets, vaseArrangements} from "@/lib/constant";
 
 const categories = [
   {

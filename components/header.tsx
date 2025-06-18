@@ -1,24 +1,21 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import {useEffect, useState} from "react"
 import Link from "next/link"
-import { Search, Menu, X } from "lucide-react"
-
-export const home : string = "Trang chủ"
-export const bouquets : string = "Bó hoa"
-export const vaseArrangements  : string = "Hoa thả lọ"
-export const bestSeller : string = " Sản phẩm bán chạy"
-export const shopName = "Bloemist"
-export const aboutUs = "Về chúng tôi"
-export const contact = "Liên hệ"
+import {Menu, Search, X} from "lucide-react"
+import {bestSeller, bouquets, home, shopName, vaseArrangements} from "@/lib/constant";
+import {Category} from "@/lib/types";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-
-
+  const [categories, setCategories] = useState<Category[]>([])
 
   useEffect(() => {
+
+
+    setCategories
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10)
     }
@@ -50,20 +47,17 @@ export default function Header() {
               </Link>
               <Link
                   href="/categories/bouquets"
-                  className="font-montserrat text-neutral-800 hover:text-primary-500 transition-colors duration-200"
-              >
+                  className="font-montserrat text-neutral-800 hover:text-primary-500 transition-colors duration-200">
                 {bouquets}
               </Link>
               <Link
                   href="/categories/vase-arrangements"
-                  className="font-montserrat text-neutral-800 hover:text-primary-500 transition-colors duration-200"
-              >
+                  className="font-montserrat text-neutral-800 hover:text-primary-500 transition-colors duration-200">
                 {vaseArrangements}
               </Link>
               <Link
                   href="/categories/best-sellers"
-                  className="font-montserrat text-neutral-800 hover:text-primary-500 transition-colors duration-200"
-              >
+                  className="font-montserrat text-neutral-800 hover:text-primary-500 transition-colors duration-200">
                 {bestSeller}
               </Link>
             </nav>
