@@ -5,7 +5,7 @@ import ProductSection from "@/components/product-section"
 import {bestSeller, bouquets, vaseArrangements} from "@/lib/constant";
 import {useEffect, useState} from "react";
 import {fetchOrdersByCategory} from "@/fetch/FetchOrder";
-import {mapOrders} from "@/lib/utils";
+import {mapProducts} from "@/lib/utils";
 import {Product} from "@/lib/types";
 
 export default function Home() {
@@ -14,19 +14,19 @@ export default function Home() {
     const [bestSellersData, setBestSellersData ]= useState<Product[]>([]);
 
     useEffect(() => {
-        fetchOrdersByCategory(1, 0, 4, "sellingTurn,desc", "")
+        fetchOrdersByCategory(1, 0, 4, "sellingTurn,desc", "", 0, 0)
             .then(page => {
-                setBouquetsData(mapOrders(page))
+                setBouquetsData(mapProducts(page))
             })
 
-        fetchOrdersByCategory(2, 0, 4, "sellingTurn,desc", "")
+        fetchOrdersByCategory(2, 0, 4, "sellingTurn,desc", "", 0, 0)
             .then(page => {
-                setVaseArrangementsData(mapOrders(page))
+                setVaseArrangementsData(mapProducts(page))
             })
 
-        fetchOrdersByCategory(0, 0, 4, "sellingTurn,desc", "")
+        fetchOrdersByCategory(0, 0, 4, "sellingTurn,desc", "", 0, 0)
             .then(page => {
-                setBestSellersData(mapOrders(page))
+                setBestSellersData(mapProducts(page))
             })
     }, []);
 

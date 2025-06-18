@@ -4,7 +4,7 @@ import SearchAndFilter from "./search-and-filter"
 import Pagination from "./pagination"
 import type { Product } from "@/lib/types"
 import {fetchOrdersByCategory} from "@/fetch/FetchOrder";
-import {mapOrders} from "@/lib/utils";
+import {mapProducts} from "@/lib/utils";
 
 interface CategoryPageProps {
     category: string
@@ -38,7 +38,7 @@ export default function CategoryPage({ category, categoryTitle }: CategoryPagePr
 
         fetchOrdersByCategory(categoryId, currentPage - 1, pageSize, "sellingTurn,desc", "", 0 , 0)
         .then(page => {
-            setProducts(mapOrders(page))
+            setProducts(mapProducts(page))
         })
 
         setIsLoading(false)
@@ -80,7 +80,7 @@ export default function CategoryPage({ category, categoryTitle }: CategoryPagePr
 
         fetchOrdersByCategory(categoryId, 0, 30, "sellingTurn,desc", filters.search.trim(), filters.minPrice!, filters.maxPrice!)
         .then(page => {
-            setProducts(mapOrders(page))
+            setProducts(mapProducts(page))
         })
     }
 

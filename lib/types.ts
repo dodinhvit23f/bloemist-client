@@ -8,7 +8,8 @@ export interface Product {
   description?: string
   sellingTurn : number,
   categories: Category[],
-  isBestSeller?: boolean
+  isBestSeller?: boolean,
+  ceremony?: boolean,
 }
 
 export interface Category {

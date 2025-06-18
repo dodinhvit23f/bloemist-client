@@ -96,7 +96,7 @@ export default function Footer() {
               <h3 className="font-playfair text-xl font-semibold text-neutral-800">Giờ mở cửa</h3>
               <ul className="space-y-3 font-montserrat">
                 <li className="flex justify-between items-center">
-                  <span className="text-neutral-600">Monday - Sunday</span>
+                  <span className="text-neutral-600">Thứ hai - Chủ nhật</span>
                   <span className="text-neutral-800 font-medium">8:00 AM - 7:00 PM</span>
                 </li>
               </ul>

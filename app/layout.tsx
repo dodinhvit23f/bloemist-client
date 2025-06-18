@@ -27,6 +27,11 @@ export const metadata: Metadata = {
         "acrylic flower container",
         "event flowers"],
     authors: [{ name: "Bloemist" }],
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
 }
 
 export const viewport: Viewport = {
@@ -41,6 +46,11 @@ export default function RootLayout({
 }>) {
   return (
       <html lang="en" className={`${playfair.variable} ${montserrat.variable}`}>
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+      </head>
       <body className="font-montserrat antialiased">
       <Header />
       <main>{children}</main>

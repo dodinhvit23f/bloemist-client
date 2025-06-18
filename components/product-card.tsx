@@ -1,5 +1,7 @@
 import Image from "next/image"
 import type { Product } from "@/lib/types"
+import Link from "next/link";
+import {formatMoney} from "@/lib/utils";
 
 interface ProductCardProps {
     product: Product
@@ -8,10 +10,11 @@ interface ProductCardProps {
 export default function ProductCard({ product }: ProductCardProps) {
     return (
         <div className="group card-hover">
+          <Link href={`/product/${product.id}`} className="group card-hover">
             <div className="relative overflow-hidden rounded-xl aspect-square mb-4 bg-neutral-100">
                 <Image
                     loading={"lazy"}
-                    src={product.imgUrl ? product.imgUrl.split(",")[0].concat("?sz=s500") : "/placeholder.svg"}
+                    src={product.imgUrl ? product.imgUrl.split(",")[0].concat("&sz=s500") : "/placeholder.svg"}
                     alt={product.name}
                     fill
                     className="object-cover transition-all duration-500 group-hover:scale-110"
@@ -23,10 +26,11 @@ export default function ProductCard({ product }: ProductCardProps) {
                     {product.name}
                 </h3>
                 <div className="flex justify-between items-center">
-                    <p className="font-montserrat text-primary-600 font-semibold text-lg">{product.price.toFixed(2)}</p>
+                    <p className="font-montserrat text-primary-600 font-semibold text-lg">{formatMoney(product.price)}</p>
                     <p className="font-montserrat text-sm text-neutral-500 bg-neutral-100 px-2 py-1 rounded-md">{product.code}</p>
                 </div>
             </div>
+          </Link>
         </div>
     )
 }

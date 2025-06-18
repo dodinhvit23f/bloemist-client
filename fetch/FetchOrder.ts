@@ -47,3 +47,25 @@ export async function fetchOrdersByCategory(categoryId: number, page: number, si
         throw error;
     }
 }
+
+export async function fetchProductById(productId: string) {
+    const baseUrl = process.env.NEXT_PUBLIC_PRODUCTS_DETAIL!.replace("{id}", productId)!
+    console.log(baseUrl)
+    try {
+        const response = await fetch(baseUrl, {
+            method: "GET",
+            headers: {
+                "resource": `${tenant}`
+            }
+        });
+
+        if (!response || response.status == 500) {
+            return new ResponseApi(0)
+        }
+
+        return new ResponseApi(await response.json());
+    } catch (error) {
+        console.error('Failed to fetch categories:', error);
+        throw error;
+    }
+}
