@@ -3,6 +3,8 @@ import ProductCard from "./product-card"
 import SearchAndFilter from "./search-and-filter"
 import Pagination from "./pagination"
 import type { Product } from "@/lib/types"
+import {fetchOrdersByCategory} from "@/fetch/FetchOrder";
+import {mapOrders} from "@/lib/utils";
 
 interface CategoryPageProps {
     category: string
@@ -18,23 +20,27 @@ export default function CategoryPage({ category, categoryTitle }: CategoryPagePr
     const [minPrice, setMinPrice] = useState<number | undefined>(undefined)
     const [maxPrice, setMaxPrice] = useState<number | undefined>(undefined)
     const [isLoading, setIsLoading] = useState(true)
+    const [categoryId, setCategoryId] = useState(0)
 
     useEffect(() => {
-      /*  const allProducts = getAllProducts()
-        const categoryProducts = allProducts.filter((product) => {
-            switch (category) {
-                case "bouquets":
-                    return product.category === "bouquet"
-                case "vase-arrangements":
-                    return product.category === "vase"
-                case "best-sellers":
-                    return product.isBestSeller
-                default:
-                    return false
-            }
-        })*/
 
-       /* setProducts(categoryProducts)*/
+        switch (category) {
+            case "bouquets":
+                setCategoryId(1)
+                break
+            case "vase-arrangements":
+                setCategoryId(2)
+                break
+            case "best-sellers":
+                setCategoryId(0)
+                break
+        }
+
+        fetchOrdersByCategory(categoryId, 0, 30, "sellingTurn,desc", "")
+        .then(page => {
+            setProducts(mapOrders(page))
+        })
+
         setIsLoading(false)
     }, [category])
 

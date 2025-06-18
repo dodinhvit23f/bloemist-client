@@ -10,7 +10,8 @@ export default function ProductCard({ product }: ProductCardProps) {
         <div className="group card-hover">
             <div className="relative overflow-hidden rounded-xl aspect-square mb-4 bg-neutral-100">
                 <Image
-                    src={product.image || "/placeholder.svg"}
+                    loading={"lazy"}
+                    src={product.imgUrl ? product.imgUrl.split(",")[0].concat("?sz=s500") : "/placeholder.svg"}
                     alt={product.name}
                     fill
                     className="object-cover transition-all duration-500 group-hover:scale-110"
