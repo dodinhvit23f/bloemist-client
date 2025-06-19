@@ -6,6 +6,7 @@ import Link from "next/link"
 import { ArrowLeft, Star } from "lucide-react"
 import type { Product } from "@/lib/types"
 import {formatMoney} from "@/lib/utils";
+import {bestSeller, ceremonySpecial, description, popularity} from "@/lib/constant";
 
 interface ProductDetailProps {
   product: Product
@@ -81,7 +82,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
             <div>
               <h1 className="font-playfair text-3xl md:text-4xl font-bold text-neutral-800 mb-2">{product.name}</h1>
               <p className="font-montserrat text-neutral-500 text-lg">
-                Product Code: <span className="font-medium text-neutral-700">{product.code}</span>
+                Mã sản phẩm: <span className="font-medium text-neutral-700">{product.code}</span>
               </p>
             </div>
 
@@ -120,19 +121,19 @@ export default function ProductDetail({ product }: ProductDetailProps) {
               {product.isBestSeller && (
                   <div className="flex items-center gap-1 bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full">
                     <Star className="w-4 h-4 fill-current" />
-                    <span className="text-sm font-montserrat font-medium">Best Seller</span>
+                    <span className="text-sm font-montserrat font-medium">{bestSeller}</span>
                   </div>
               )}
               {product.ceremony && (
                   <div className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full">
-                    <span className="text-sm font-montserrat font-medium">Ceremony Special</span>
+                    <span className="text-sm font-montserrat font-medium">{ceremonySpecial}</span>
                   </div>
               )}
             </div>
 
             {/* Selling Turn */}
             <div className="bg-neutral-50 p-4 rounded-lg">
-              <p className="text-sm text-neutral-600 font-montserrat mb-1">Popularity</p>
+              <p className="text-sm text-neutral-600 font-montserrat mb-1">{popularity}</p>
               <div className="flex items-center gap-2">
                 <div className="flex-1 bg-neutral-200 rounded-full h-2">
                   <div
@@ -140,14 +141,14 @@ export default function ProductDetail({ product }: ProductDetailProps) {
                       style={{ width: `${Math.min((product.sellingTurn / 50) * 100, 100)}%` }}
                   />
                 </div>
-                <span className="text-sm font-montserrat font-medium text-neutral-700">{product.sellingTurn} sold</span>
+                <span className="text-sm font-montserrat font-medium text-neutral-700">{product.sellingTurn} đã bán</span>
               </div>
             </div>
 
             {/* Description */}
             {product.description && (
                 <div className="space-y-3">
-                  <h3 className="font-playfair text-xl font-semibold text-neutral-800">Description</h3>
+                  <h3 className="font-playfair text-xl font-semibold text-neutral-800">{description}</h3>
                   <p className="font-montserrat text-neutral-600 leading-relaxed">{product.description}</p>
                 </div>
             )}

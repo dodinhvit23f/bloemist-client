@@ -150,13 +150,12 @@ export default function CategoryPage({ category, categoryTitle }: CategoryPagePr
                         <div className="w-24 h-24 mx-auto mb-6 bg-neutral-100 rounded-full flex items-center justify-center">
                             <span className="text-4xl">🌸</span>
                         </div>
-                        <h3 className="font-playfair text-2xl font-semibold text-neutral-800 mb-2">No products found</h3>
-                        <p className="font-montserrat text-neutral-600 mb-6">Try adjusting your search or filter criteria</p>
+                        <h3 className="font-playfair text-2xl font-semibold text-neutral-800 mb-2">Không sản phẩn nào được tìm thấy</h3>
+                        <p className="font-montserrat text-neutral-600 mb-6">Hãy thử điều chỉnh tiêu chí tìm kiếm hoặc lọc của bạn</p>
                         <button
                             onClick={() => handleFilterChange({ search: "", minPrice: undefined, maxPrice: undefined })}
-                            className="font-montserrat bg-primary-500 text-white px-6 py-3 rounded-lg hover:bg-primary-600 transition-colors duration-200"
-                        >
-                            Clear Filters
+                            className="font-montserrat bg-primary-500 text-white px-6 py-3 rounded-lg hover:bg-primary-600 transition-colors duration-200">
+                            Bỏ chọn
                         </button>
                     </div>
                 </div>
