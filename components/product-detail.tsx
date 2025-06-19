@@ -34,7 +34,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
             {/* Main Image */}
             <div className="relative aspect-square bg-neutral-100 rounded-2xl overflow-hidden">
               <Image
-                  src={images[currentImageIndex].concat("&sz=s500") || "/placeholder.svg"}
+                  src={images[currentImageIndex].concat("&sz=s900") || "/placeholder.svg"}
                   alt={`${product.name} - Image ${currentImageIndex + 1}`}
                   fill
                   className="object-cover"
