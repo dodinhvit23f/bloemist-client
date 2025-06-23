@@ -1,21 +1,23 @@
 "use client"
 
-import {useEffect, useState} from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
-import {Menu, Search, X} from "lucide-react"
-import {bestSeller, bouquets, home, shopName, vaseArrangements} from "@/lib/constant";
-import {Category} from "@/lib/types";
+import { Search, Menu, X, ChevronDown } from "lucide-react"
+import {
+  acrylicFlowerContainer,
+  bestSeller,
+  bouquets, eventFlowers,
+  flowerBasket, flowerShelf, lunarFlowers, sympathyFlowers,
+  vaseArrangements,
+  weddingFlowers
+} from "@/lib/constant";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [categories, setCategories] = useState<Category[]>([])
+  const [isCategoriesOpen, setIsCategoriesOpen] = useState(false)
 
   useEffect(() => {
-
-
-    setCategories
-
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10)
     }
@@ -23,6 +25,18 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
+
+  const categories = [
+    { name: bouquets, href: "/categories/bouquets" },
+    { name: vaseArrangements, href: "/categories/vase-arrangements" },
+    { name: flowerBasket, href: "/categories/flower-basket" },
+    { name: acrylicFlowerContainer, href: "/categories/acrylic-flower-container" },
+    { name: weddingFlowers, href: "/categories/wedding-flowers" },
+    { name: flowerShelf, href: "/categories/flower-shelf" },
+    { name: lunarFlowers, href: "/categories/lunar-flowers" },
+    { name: eventFlowers, href: "/categories/event-flowers" },
+    { name: sympathyFlowers, href: "/categories/sympathy-flowers" },
+  ]
 
   return (
       <header
@@ -34,30 +48,56 @@ export default function Header() {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="relative z-10">
-              <h1 className="font-playfair text-2xl md:text-3xl font-bold gradient-text">{shopName}</h1>
+              <h1 className="font-playfair text-2xl md:text-3xl font-bold gradient-text">Bloemist</h1>
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
+            <nav className="hidden lg:flex items-center space-x-8">
               <Link
                   href="/"
                   className="font-montserrat text-neutral-800 hover:text-primary-500 transition-colors duration-200"
               >
-                {home}
+                Trang Chủ
               </Link>
-              <Link
-                  href="/categories/bouquets"
-                  className="font-montserrat text-neutral-800 hover:text-primary-500 transition-colors duration-200">
-                {bouquets}
-              </Link>
-              <Link
-                  href="/categories/vase-arrangements"
-                  className="font-montserrat text-neutral-800 hover:text-primary-500 transition-colors duration-200">
-                {vaseArrangements}
-              </Link>
+
+              {/* Categories Dropdown */}
+              <div className="relative group">
+                <button
+                    className="flex items-center gap-1 font-montserrat text-neutral-800 hover:text-primary-500 transition-colors duration-200"
+                    onMouseEnter={() => setIsCategoriesOpen(true)}
+                    onMouseLeave={() => setIsCategoriesOpen(false)}
+                >
+                  Danh Mục
+                  <ChevronDown
+                      className={`w-4 h-4 transition-transform duration-200 ${isCategoriesOpen ? "rotate-180" : ""}`}
+                  />
+                </button>
+
+                {/* Dropdown Menu */}
+                <div
+                    className={`absolute top-full left-0 mt-2 w-64 glass-effect shadow-lg rounded-lg border border-white/20 py-2 transition-all duration-200 ${
+                        isCategoriesOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"
+                    }`}
+                    onMouseEnter={() => setIsCategoriesOpen(true)}
+                    onMouseLeave={() => setIsCategoriesOpen(false)}
+                >
+                  {categories.map((category, index) => (
+                      <Link
+                          key={index}
+                          href={category.href}
+                          className="block px-4 py-3 font-montserrat text-neutral-800 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 text-sm"
+                          onClick={() => setIsCategoriesOpen(false)}
+                      >
+                        {category.name}
+                      </Link>
+                  ))}
+                </div>
+              </div>
+
               <Link
                   href="/categories/best-sellers"
-                  className="font-montserrat text-neutral-800 hover:text-primary-500 transition-colors duration-200">
+                  className="font-montserrat text-neutral-800 hover:text-primary-500 transition-colors duration-200"
+              >
                 {bestSeller}
               </Link>
             </nav>
@@ -66,7 +106,7 @@ export default function Header() {
             <div className="hidden md:flex items-center relative">
               <input
                   type="text"
-                  placeholder="Tìm kiếm sản phẩm..."
+                  placeholder="Tìm kiếm hoa..."
                   className="pl-10 pr-4 py-2.5 rounded-full border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 w-48 lg:w-64 text-sm bg-white/90 backdrop-blur-sm transition-all duration-200"
               />
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-neutral-400 w-4 h-4" />
@@ -74,7 +114,7 @@ export default function Header() {
 
             {/* Mobile Menu Button */}
             <button
-                className="md:hidden relative z-10 p-2 rounded-lg hover:bg-white/10 transition-colors duration-200"
+                className="lg:hidden relative z-10 p-2 rounded-lg hover:bg-white/10 transition-colors duration-200"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 aria-label="Toggle menu"
             >
@@ -84,43 +124,50 @@ export default function Header() {
 
           {/* Mobile Menu */}
           {isMenuOpen && (
-              <div className="md:hidden absolute top-full left-0 right-0 glass-effect shadow-lg p-4 border-t border-white/20 animate-slide-up">
-                <div className="flex items-center relative mb-4">
+              <div className="lg:hidden absolute top-full left-0 right-0 glass-effect shadow-lg p-4 border-t border-white/20 animate-slide-up max-h-96 overflow-y-auto">
+                {/* Mobile Search */}
+                <div className="flex items-center relative mb-6">
                   <input
                       type="text"
-                      placeholder="Search flowers..."
+                      placeholder="Tìm kiếm hoa..."
                       className="pl-10 pr-4 py-2.5 rounded-full border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 w-full text-sm bg-white/90 backdrop-blur-sm"
                   />
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-neutral-400 w-4 h-4" />
                 </div>
-                <nav className="flex flex-col space-y-4">
+
+                {/* Mobile Navigation */}
+                <nav className="flex flex-col space-y-2">
                   <Link
                       href="/"
-                      className="font-montserrat text-neutral-800 hover:text-primary-500 transition-colors duration-200 py-2"
+                      className="font-montserrat text-neutral-800 hover:text-primary-500 transition-colors duration-200 py-2 px-2 rounded-lg hover:bg-primary-50"
                       onClick={() => setIsMenuOpen(false)}
                   >
-                    {home}
+                    Trang Chủ
                   </Link>
-                  <Link
-                      href="/categories/bouquets"
-                      className="font-montserrat text-neutral-800 hover:text-primary-500 transition-colors duration-200 py-2"
-                      onClick={() => setIsMenuOpen(false)}
-                  >
-                    {bouquets}
-                  </Link>
-                  <Link
-                      href="/categories/vase-arrangements"
-                      className="font-montserrat text-neutral-800 hover:text-primary-500 transition-colors duration-200 py-2"
-                      onClick={() => setIsMenuOpen(false)}
-                  >
-                    {vaseArrangements}
-                  </Link>
+
+                  {/* Mobile Categories */}
+                  <div className="py-2">
+                    <p className="font-montserrat text-neutral-600 text-sm font-medium mb-2 px-2">Danh Mục Sản Phẩm</p>
+                    <div className="space-y-1">
+                      {categories.map((category, index) => (
+                          <Link
+                              key={index}
+                              href={category.href}
+                              className="block font-montserrat text-neutral-800 hover:text-primary-500 transition-colors duration-200 py-2 px-4 rounded-lg hover:bg-primary-50 text-sm"
+                              onClick={() => setIsMenuOpen(false)}
+                          >
+                            {category.name}
+                          </Link>
+                      ))}
+                    </div>
+                  </div>
+
                   <Link
                       href="/categories/best-sellers"
-                      className="font-montserrat text-neutral-800 hover:text-primary-500 transition-colors duration-200 py-2"
+                      className="font-montserrat text-neutral-800 hover:text-primary-500 transition-colors duration-200 py-2 px-2 rounded-lg hover:bg-primary-50"
                       onClick={() => setIsMenuOpen(false)}
                   >
-                    {bestSeller}
+                    Sản Phẩm Bán Chạy
                   </Link>
                 </nav>
               </div>
