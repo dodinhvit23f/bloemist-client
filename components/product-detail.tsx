@@ -25,7 +25,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
             className="inline-flex items-center gap-2 text-neutral-600 hover:text-primary-600 transition-colors duration-200 mb-8 group"
         >
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-200" />
-          <span className="font-montserrat">Back to Home</span>
+          <span className="font-montserrat">Trở về trang chủ</span>
         </Link>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">

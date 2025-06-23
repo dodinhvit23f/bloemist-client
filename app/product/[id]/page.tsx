@@ -1,4 +1,3 @@
-"use client"
 import { notFound } from "next/navigation"
 import { Suspense } from "react"
 import ProductDetail from "@/components/product-detail"

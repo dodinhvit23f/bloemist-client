@@ -50,7 +50,6 @@ export async function fetchOrdersByCategory(categoryId: number, page: number, si
 
 export async function fetchProductById(productId: string) {
     const baseUrl = process.env.NEXT_PUBLIC_PRODUCTS_DETAIL!.replace("{id}", productId)!
-    console.log(baseUrl)
     try {
         const response = await fetch(baseUrl, {
             method: "GET",
