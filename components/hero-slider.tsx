@@ -8,7 +8,7 @@ const slides = [
   {
     id: 1,
     image: "https://lh3.googleusercontent.com/d/1PqdaKJSFnH94dide1O-J8k6fwWNxEAQ8".concat("?sz=s1980"),
-    title: "Trọn Đời Nên Nhau",
+    title: "Trọn Đời Bên Nhau",
     subtitle: "Tình yêu dẫn lối – Hạnh phúc kết trái",
   },
   {
