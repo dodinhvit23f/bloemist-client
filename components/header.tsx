@@ -1,16 +1,9 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import {useEffect, useState} from "react"
 import Link from "next/link"
-import { Search, Menu, X, ChevronDown } from "lucide-react"
-import {
-  acrylicFlowerContainer,
-  bestSeller,
-  bouquets, eventFlowers,
-  flowerBasket, flowerShelf, lunarFlowers, sympathyFlowers,
-  vaseArrangements,
-  weddingFlowers
-} from "@/lib/constant";
+import {ChevronDown, Menu, Search, X} from "lucide-react"
+import {bestSeller, blog, categories, contact, policy} from "@/lib/constant";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -25,18 +18,6 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
-
-  const categories = [
-    { name: bouquets, href: "/categories/bouquets" },
-    { name: vaseArrangements, href: "/categories/vase-arrangements" },
-    { name: flowerBasket, href: "/categories/flower-basket" },
-    { name: acrylicFlowerContainer, href: "/categories/acrylic-flower-container" },
-    { name: weddingFlowers, href: "/categories/wedding-flowers" },
-    { name: flowerShelf, href: "/categories/flower-shelf" },
-    { name: lunarFlowers, href: "/categories/lunar-flowers" },
-    { name: eventFlowers, href: "/categories/event-flowers" },
-    { name: sympathyFlowers, href: "/categories/sympathy-flowers" },
-  ]
 
   return (
       <header
@@ -99,6 +80,24 @@ export default function Header() {
                   className="font-montserrat text-neutral-800 hover:text-primary-500 transition-colors duration-200"
               >
                 {bestSeller}
+              </Link>
+
+              <Link
+                  href="/blogs"
+                  className="font-montserrat text-neutral-800 hover:text-primary-500 transition-colors duration-200">
+                {blog}
+              </Link>
+
+              <Link
+                  href="/policy"
+                  className="font-montserrat text-neutral-800 hover:text-primary-500 transition-colors duration-200">
+                {policy}
+              </Link>
+
+              <Link
+                  href="/contact"
+                  className="font-montserrat text-neutral-800 hover:text-primary-500 transition-colors duration-200">
+                {contact}
               </Link>
             </nav>
 
