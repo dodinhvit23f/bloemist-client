@@ -36,7 +36,7 @@ export const categories = [
         id: 2,
         name: vaseArrangements,
         href: "/categories/vase-arrangements",
-        popularity: true,
+        popularity: false,
         image: "https://lh3.googleusercontent.com/d/1Rg4MVICFGYkEgox5uy89WiRGnieghLP3".concat("?sz=500")
     },
     {
@@ -50,47 +50,55 @@ export const categories = [
         id: 4,
         name: acrylicFlowerContainer,
         popularity: true,
-        href: "/categories/acrylic-flower-container"
+        href: "/categories/acrylic-flower-container",
+        image: "https://lh3.googleusercontent.com/d/1LiWr_3OE7JF8_bw_qMsN01cUAAEzD0tE".concat("?sz=500")
     },
     {
         id: 5,
         name: weddingFlowers,
         href: "/categories/wedding-flowers",
-        popularity: false,
+        popularity: true,
+        image: "https://lh3.googleusercontent.com/d/10P8Y1yXPCSbRRYyaoWiyMsbNu2akVpXg".concat("?sz=500")
     },
     {
         id: 6,
         name: flowerShelf,
         href: "/categories/flower-shelf",
         popularity: true,
+        image: "https://lh3.googleusercontent.com/d/1TicTyxGOvsjAK54dHA55cXM3FyYQforr".concat("?sz=500")
     },
     {
         id: 7,
         name: lunarFlowers,
         href: "/categories/lunar-flowers",
         popularity: false,
+        image: "https://lh3.googleusercontent.com/d/1VkRsl098y-nNjbn2wW8tlNQvjVmlDpZu".concat("?sz=500")
     },
     {
         id: 8,
         name: eventFlowers,
         href: "/categories/event-flowers",
         popularity: false,
+        image: "https://lh3.googleusercontent.com/d/1VkRsl098y-nNjbn2wW8tlNQvjVmlDpZu".concat("?sz=500")
     },
     {
         id: 10,
         name: flowerVase, href: "/categories/flower-vase",
         popularity: true,
+        image: "https://lh3.googleusercontent.com/d/1e9rHIVfZ9PuGlMnAyd7nIkLAFJk9Jcmr".concat("?sz=500")
     },
     {
         id: 11,
         name: decorFlower,
         href: "/categories/decor-flower",
         popularity: false,
+        image: "https://lh3.googleusercontent.com/d/1VkRsl098y-nNjbn2wW8tlNQvjVmlDpZu".concat("?sz=500")
     },
     {
         id: 9,
         name: sympathyFlowers,
         href: "/categories/sympathy-flowers",
         popularity: false,
+        image: "https://lh3.googleusercontent.com/d/1VkRsl098y-nNjbn2wW8tlNQvjVmlDpZu".concat("?sz=500")
     },
 ]

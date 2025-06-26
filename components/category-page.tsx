@@ -31,6 +31,33 @@ export default function CategoryPage({ category, categoryTitle }: CategoryPagePr
             case "vase-arrangements":
                 setCategoryId(2)
                 break
+            case "flower-basket":
+                setCategoryId(3)
+                break
+            case "acrylic-flower-container":
+                setCategoryId(4)
+                break
+            case "wedding-flowers":
+                setCategoryId(5)
+                break
+            case "flower-shelf":
+                setCategoryId(6)
+                break
+            case "lunar-flowers":
+                setCategoryId(7)
+                break
+            case "event-flowers":
+                setCategoryId(8)
+                break
+            case "sympathy-flowers":
+                setCategoryId(9)
+                break
+            case "flower-vase":
+                setCategoryId(10)
+                break
+            case "decor-flower":
+                setCategoryId(11)
+                break
             case "best-sellers":
                 setCategoryId(0)
                 break
