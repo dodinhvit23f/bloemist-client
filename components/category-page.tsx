@@ -1,3 +1,4 @@
+'use client'
 import { useState, useEffect } from "react"
 import ProductCard from "./product-card"
 import SearchAndFilter from "./search-and-filter"
@@ -8,57 +9,21 @@ import {mapProducts} from "@/lib/utils";
 
 interface CategoryPageProps {
     category: string
-    categoryTitle: string
+    categoryTitle: string,
+    initialProducts: Product[]
 }
 
-export default function CategoryPage({ category, categoryTitle }: CategoryPageProps) {
-    const [products, setProducts] = useState<Product[]>([])
+export default function CategoryPage({ category, categoryTitle, initialProducts }: CategoryPageProps) {
+    const [products, setProducts] = useState<Product[]>(initialProducts)
     const [filteredProducts, setFilteredProducts] = useState<Product[]>([])
     const [currentPage, setCurrentPage] = useState(1)
     const [pageSize, setPageSize] = useState(30)
     const [searchQuery, setSearchQuery] = useState("")
     const [minPrice, setMinPrice] = useState<number | undefined>(undefined)
     const [maxPrice, setMaxPrice] = useState<number | undefined>(undefined)
-    const [isLoading, setIsLoading] = useState(true)
+    const [isLoading, setIsLoading] = useState(false)
     const [categoryId, setCategoryId] = useState(0)
 
-    const getCategoryId = ( category: string) => {
-        switch (category) {
-            case "bouquets":
-                return 1
-            case "vase-arrangements":
-                return 2
-            case "flower-basket":
-                return 3
-            case "acrylic-flower-container":
-                return 4
-            case "wedding-flowers":
-                return 5
-            case "flower-shelf":
-                return 6
-            case "lunar-flowers":
-                return 7
-            case "event-flowers":
-                return 8
-            case "sympathy-flowers":
-                return 9
-            case "flower-vase":
-                return 10
-            case "decor-flower":
-                return 11
-            case "best-sellers":
-                return 0
-        }
-        return 0
-    }
-    useEffect(() => {
-        fetchOrdersByCategory(getCategoryId(category), currentPage - 1, pageSize, "sellingTurn,desc", "", 0 , 0)
-        .then(page => {
-            setProducts(mapProducts(page))
-        })
-
-        setIsLoading(false)
-    }, [category])
 
     useEffect(() => {
         let filtered = [...products]
