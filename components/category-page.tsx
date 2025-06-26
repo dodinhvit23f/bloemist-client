@@ -22,48 +22,37 @@ export default function CategoryPage({ category, categoryTitle }: CategoryPagePr
     const [isLoading, setIsLoading] = useState(true)
     const [categoryId, setCategoryId] = useState(0)
 
-    useEffect(() => {
-
+    const getCategoryId = ( category: string) => {
         switch (category) {
             case "bouquets":
-                setCategoryId(1)
-                break
+                return 1
             case "vase-arrangements":
-                setCategoryId(2)
-                break
+                return 2
             case "flower-basket":
-                setCategoryId(3)
-                break
+                return 3
             case "acrylic-flower-container":
-                setCategoryId(4)
-                break
+                return 4
             case "wedding-flowers":
-                setCategoryId(5)
-                break
+                return 5
             case "flower-shelf":
-                setCategoryId(6)
-                break
+                return 6
             case "lunar-flowers":
-                setCategoryId(7)
-                break
+                return 7
             case "event-flowers":
-                setCategoryId(8)
-                break
+                return 8
             case "sympathy-flowers":
-                setCategoryId(9)
-                break
+                return 9
             case "flower-vase":
-                setCategoryId(10)
-                break
+                return 10
             case "decor-flower":
-                setCategoryId(11)
-                break
+                return 11
             case "best-sellers":
-                setCategoryId(0)
-                break
+                return 0
         }
-
-        fetchOrdersByCategory(categoryId, currentPage - 1, pageSize, "sellingTurn,desc", "", 0 , 0)
+        return 0
+    }
+    useEffect(() => {
+        fetchOrdersByCategory(getCategoryId(category), currentPage - 1, pageSize, "sellingTurn,desc", "", 0 , 0)
         .then(page => {
             setProducts(mapProducts(page))
         })
@@ -92,7 +81,6 @@ export default function CategoryPage({ category, categoryTitle }: CategoryPagePr
         }
 
         setFilteredProducts(filtered)
-        // Reset to page 1 when filters change
         setCurrentPage(1)
     }, [products, searchQuery, minPrice, maxPrice])
 
